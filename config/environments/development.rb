@@ -24,8 +24,8 @@ Mlm::Application.configure do
   #   :address              => "smtp.gmail.com",
   #   :port                 => 587,
   #   :domain               => 'localhost',
-  #   :user_name            => 'cpfortenberry',
-  #   :password             => 'SJ@V5Ucf',
+  #   :user_name            => 'USERNAME',
+  #   :password             => 'PASSWORD',
   #   :authentication       => 'plain',
   #   :enable_starttls_auto => true  }
 
