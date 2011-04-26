@@ -1,0 +1,12 @@
+<h1>My Lessons</h1>
+
+<% for lesson in @lessons %>
+	<p>
+		<%= link_to lesson.student.full_name, lesson %><br />
+		<%= lesson.datetime %><br />
+		<%= number_to_currency lesson.charge %><br />
+		<%= lesson.notes %>
+	</p>
+<% end %>
+
+<%= link_to "New Lesson", new_lesson_path %>

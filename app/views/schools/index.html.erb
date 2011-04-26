@@ -1,0 +1,8 @@
+<h1>All Schools</h1>
+
+<% for school in @schools %>
+	<%= link_to school.school_name, school %> | <%= link_to "Edit", edit_school_path(school) %><br />
+	<br />
+<% end %>
+
+<%= link_to "New School", new_school_path %>

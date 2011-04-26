@@ -1,0 +1,50 @@
+html {
+	background: #9cf;
+}
+
+#header {
+	background: brown;
+}
+
+.notice {
+	background: green;
+}
+
+.alert {
+	background: red;
+}
+
+#title h1 a {
+	color: #000;
+	text-decoration: none;
+}
+#title h1 a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+h3 a {
+	color: #000;
+	text-decoration: none;
+}
+
+h3 a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+a {
+	color: #ad5229;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+a:active {
+	color: #000;
+}
+.dashboard {
+	min-height: 240px;
+}

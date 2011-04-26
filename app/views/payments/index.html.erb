@@ -1,0 +1,13 @@
+<h1>Payments</h1>
+
+<% for payment in @payments %>
+	<%= link_to payment.student.full_name, payment %><br />
+	<%= payment.date %><br />
+	<%= number_to_currency payment.amount %><br />
+	<%= payment.payment_type %><br />
+	<% if payment.check_number %><%= payment.check_number %><br /><% end %>
+	<%= payment.notes %><br />
+	<%= link_to "Edit", edit_payment_path(payment) %> | <%= link_to "Delete", payment, :confirm => "Are you sure?", :method => :delete %>
+<% end %>
+
+<%= link_to "Post Payment", new_payment_path %>

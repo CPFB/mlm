@@ -1,0 +1,17 @@
+<%= form_for(@student) do |f| %>
+	<p><%= f.label :first_name %><br />
+	<%= f.text_field :first_name %></p>
+	
+	<p><%= f.label :last_name %><br />
+	<%= f.text_field :last_name %></p>
+
+	<%= f.hidden_field :instructor_id, :value => current_user.instructor.id %>
+
+	<p><%= f.label :school_id %><br />
+	<%= f.text_field :school_id, :value => @student.school_name %></p>
+		
+	<p><%= f.label :email %><br />
+	<%= f.text_field :email %></p>
+
+	<%= f.submit %>
+<% end %>

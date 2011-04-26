@@ -1,0 +1,109 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  student: demura
+  instructor: cpfb
+  date: 2011-04-12
+  amount: 15.00
+  payment_type: check
+  check_number: 1555
+  notes: Payment made on time.
+  
+two:
+  student: johnny
+  instructor: cpfb
+  date: 2011-04-20
+  amount: 570.00
+  payment_type: direct deposit
+  check_number:
+  notes: payment made ahead of time
+
+no_lesson:
+  student: no_lessons
+  instructor: cpfb
+  date: 2011-01-01
+  amount: 15.00
+  payment_type: check
+  check_number: 1500
+  notes: no lesson taken
+  
+equal:
+  student: equal
+  instructor: cpfb
+  date: 2011-01-01
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes: zero balance
+  
+six_1:
+  student: six
+  instructor: six
+  date: 2011-01-01
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes: 
+
+six_2:
+  student: six
+  instructor: six
+  date: 2011-01-02
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes:
+    
+six_3:
+  student: six
+  instructor: six
+  date: 2011-01-03
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes: 
+    
+six_4:
+  student: six
+  instructor: six
+  date: 2011-01-04
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes: 
+
+six_5:
+  student: six
+  instructor: six
+  date: 2011-01-05
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes: 
+
+six_6:
+  student: six
+  instructor: six
+  date: 2011-01-06
+  amount: 15.00
+  payment_type: cash
+  check_number:
+  notes: 
+
+two_payments_no_lessons_1:
+  student: two_payments_no_lessons
+  instructor: cpfb
+  date: 2011-01-01
+  amount: 15.00
+  payment_type: check
+  check_number:
+  notes:
+    
+two_payments_no_lessons_2:
+  student: two_payments_no_lessons
+  instructor: cpfb
+  date: 2011-01-02
+  amount: 15.00
+  payment_type: check
+  check_number:
+  notes:

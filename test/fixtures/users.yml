@@ -1,0 +1,26 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+cpfb:
+  email: cpfortenberry@gmail.com
+  first_name: Christopher
+  last_name: Fortenberry
+
+admin:
+  email: admin@cpfb.us
+  first_name: System
+  last_name: Administrator
+  admin: true
+
+loser:
+  email: loser@nostudents.com
+  first_name: loser
+  last_name: teacher
+  
+six:
+  email: six@sixsstuffs.com
+  first_name: six
+  last_name: students

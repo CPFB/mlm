@@ -1,0 +1,24 @@
+<%= form_for(@lesson) do |f| %>
+	<p>
+		<%= f.label :student_id %><br />
+		<%= f.collection_select :student_id, @students, :id, :full_name, :include_blank => true %>
+	</p>
+	<%= f.hidden_field :instructor_id, :value => (@lesson.instructor_id || current_user.instructor.id) %>
+	
+	<p>
+		<%= f.label :datetime %><br />
+		<%= f.datetime_select :datetime %>
+	</p>
+	
+	<p>
+		<%= f.label :charge %><br />
+		<%= f.text_field :charge %>
+	</p>
+	
+	<p>
+		<%= f.label :notes %><br />
+		<%= f.text_area :notes %>
+	</p>
+
+	<%= f.submit%>
+<% end %>

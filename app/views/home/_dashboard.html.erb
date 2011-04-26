@@ -1,0 +1,43 @@
+<% title "Dashboard" %>
+
+<div class="grid_4 dashboard">
+	<h3><%= link_to "My Profile", edit_profile_path %></h3>
+	<%= current_user.full_name %><br />
+	<%= current_user.email %><br />
+
+	<%= link_to "Edit Profile", edit_profile_path %>
+</div>
+
+<div class="grid_4 dashboard">
+	<h3><%= link_to "My Students", students_path %></h3>
+	
+	<% for student in current_user.instructor.students %>
+		<%= link_to "#{student.full_name} #{number_to_currency student.balance_due}", student %><br />
+	<% end %>
+	<br />
+	<%= link_to "New Student", new_student_path %>
+</div>
+
+<div class="grid_4 dashboard">
+	<h3><%= link_to "Recent Payments", payments_path %></h3>
+	
+	<% for payment in current_user.recent_payments %>
+		<%= link_to "#{payment.student.full_name} #{number_to_currency payment.amount}", payment %><br />
+	<% end %>
+	
+	<br />
+	<%= link_to "New Payment", new_payment_path %>
+
+	<%= link_to "Show all Payments", payments_path %>
+</div>
+
+<h3><%= link_to "Recent Lessons", lessons_path %></h3>
+
+	<% for lesson in current_user.recent_lessons %>
+		<%= link_to "#{lesson.student.full_name} #{lesson.datetime}", lesson %><br />
+	<% end %>
+	
+	<br />
+	<%= link_to "New Lesson", new_lesson_path %>
+
+<%= link_to "Show all Lessons", lessons_path %>

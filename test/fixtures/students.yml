@@ -1,0 +1,60 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+demura:
+  first_name: Michelle
+  last_name: Demura
+  school: rhhs
+  instructor: cpfb
+  email: michelle@demura.com
+
+cason:
+  first_name: Laura
+  last_name: Cason
+  school: phs
+  instructor: cpfb
+  email: laura_cason@gmail.com
+  
+johnny:
+  first_name: Johnny
+  last_name: Fuller
+  school: rhhs
+  instructor: cpfb
+  email: jafuller@gmail.com
+
+one:
+  first_name: One
+  last_name: Lesson
+  school: rhhs
+  instructor: cpfb
+  email: 
+  
+no_lessons:
+  first_name: One 
+  last_name: Payment
+  school: phs
+  instructor: cpfb
+  email: 
+    
+equal:
+  first_name: Zero
+  last_name: Balance
+  school: phs
+  instructor: cpfb
+
+six:
+  first_name: six
+  last_name: payments
+  school: phs
+  instructor: cpfb
+  
+two_lessons_no_payment:
+  first_name: two
+  last_name: lessons
+  school: phs
+  instructor: cpfb
+
+two_payments_no_lessons:
+  first_name: two
+  last_name: payments
+  school: phs
+  instructor: cpfb

@@ -1,0 +1,10 @@
+<h1>Show Payment</h1>
+
+<%= @payment.student.full_name %><br />
+<%= @payment.date %><br />
+<%= number_to_currency @payment.amount %><br />
+<%= @payment.payment_type %><br />
+<% if @payment.check_number %><%= @payment.check_number %><br /><% end %>
+<%= @payment.notes %><br />
+
+<%= link_to "Edit", edit_payment_path(@payment) %>

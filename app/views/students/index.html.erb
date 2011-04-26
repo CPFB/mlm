@@ -1,0 +1,13 @@
+<h1>My Students</h1>
+
+<% for student in @students %>
+	<%= link_to student.full_name, student %><br />
+	<%= student.school_name %><br />
+	<% if student.email %>
+		<%= student.email %><br />
+	<% end %>
+	<%= link_to "Edit", edit_student_path(student) %> | <%= link_to "Delete", student, :confirm => "Are you sure?", :method => :delete %><br />
+	<br />
+<% end %>
+
+<%= link_to "New Student", new_student_path %>

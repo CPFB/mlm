@@ -1,0 +1,79 @@
+Stuff to possibly change when more features are implemented
+	When a user is created, they either become an instructor upon confirmation or they become a student upon creation (by the instructor after being added)
+	In student#create, create a new user that is associated with the student. Sends an email to the student, allowing them to confirm their account
+	Eventually implement a way to undo edits/deletes. Possibly through some sort of versioning tool?
+	
+Stuff to change when migrating to production servers
+	config/environments/production must be updated to include the hostname for actionmailer settings
+	uncomment the lines of code that hook gmail up to activemailer
+	
+Stuff that is fairly set in concrete
+	Students will only have one instructor.
+	Users can have multiple students.
+	A IRL student with multiple instructors will have multiple student instances associated with the same account
+	
+---
+
+write functional tests for creation of new lesson regarding the balance of both payments and lessons [MASSIVE FAIL]
+write functional tests for creation of new payment regarding the balance of both payments and lessons [MASSIVE FAIL]
+	
+	# translated into actual code in the lessons_controller.rb
+	when creating a new lesson
+		balance = charge
+		if (!lessons.balance > 0 && payments.balance > 0)
+			for payment in (payments.balance > 0)
+				if balance > payment.balance
+					balance -= payment.balance
+					payment.balance = 0
+				else
+					payment.balance -= balance
+					balance = 0
+				end
+			end
+		end
+	
+	when creating a new payment
+		balance = amount
+		if (lessons.balance > 0)
+			for lesson in lessons.balance > 0
+				if balance > lesson.balance
+					balance -= lesson.balance
+					lesson.balance = 0
+				else
+					lesson.balance -= balance
+					balance = 0
+				end
+			end
+			
+		end
+
+	problems to confront (what to do with all of the balances if for some reason the record doesn't save?) [possible solution is to put the values in a hash to be saved after the record is saved]
+	probably need to write a reconcile_balances method to make sure that all balances are in the appropriate levels (going to have the same problem that set_balance is having right now)
+
+Showing error messages when things don't go right for the user
+Write tests to confirm the views
+Fix datetime in lesson templates to work/display as regular field (hopefully)
+
+In students/new, populate school field using autocomplete as shown in recent railscasts episode                                                                                                                                                                                                                                                                                                                                
+	Students#new needs autocomplete
+	Lesson#new needs autocomplete?
+
+
+
+Payments views need to be done
+School#combine action might be needed eventually.
+
+Refactor the title shortcuts using yield's
+
+960 CSS framework
+	need a solid CSS background
+	grid_<cols>
+	_alpha, _omega needed when doing nested
+	if you would like to add padding, it needs to be done not to the main class, but an internal wrapper
+	
+	<head>
+		<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/960.css" />
+	</head>
+	

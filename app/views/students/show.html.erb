@@ -1,0 +1,7 @@
+<h1>Show Student</h1>
+
+<p>Student's Name: <strong><%= @student.first_name + ' ' + @student.last_name%></strong></p>
+<p>School: <%= @student.school.school_name %></p>
+<p>Email: <%= @student.email %></p>
+
+<div class="page_navigation"><%= link_to "Edit", edit_student_path(@student) %></div>

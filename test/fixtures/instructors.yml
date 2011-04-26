@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cpfb:
+  user: cpfb
+
+loser:
+  user: loser
+
+six:
+  user: six
