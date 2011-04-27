@@ -55,37 +55,6 @@ class LessonTest < ActiveSupport::TestCase
     lesson.save
     assert_equal lesson.balance, 15.00
   end
-
-  # test "lesson with equal payment sets balance of lesson to zero when lesson is entered first" do
-  #   student = students(:equal)
-  #   lesson = student.lessons.first
-  #   lesson.set_balance
-  #   lesson.save
-  #   assert_equal lesson.balance, 15
-  #   payment = student.payments.first
-  #   
-  #   # payment.set_balance
-  #   
-  #   payment_balance = payment.amount
-  #   for lesson in payment.student.lessons_with_balance_due
-  #     lesson_balance = lesson.balance
-  #     if payment_balance >= lesson_balance
-  #       payment_balance -= lesson_balance
-  #       lesson_balance = 0
-  #     else
-  #       lesson_balance -= payment_balance
-  #       payment_balance = 0
-  #     end
-  #     # assert lesson.valid?
-  #     lesson.update_attributes(:balance => lesson_balance)
-  #   end   
-  #   payment.update_attributes(:balance => payment_balance)
-  #   
-  #   
-  #   payment.save
-  #   assert_equal payment.balance, 0
-  #   assert_equal lesson.balance, 0
-  # end
   
   # test "lesson with equal payment when lesson is made first should have zero balance" do
   #   student = students(:equal)
@@ -98,4 +67,35 @@ class LessonTest < ActiveSupport::TestCase
   #   assert_equal payment.balance, 0.00
   #   assert_equal lesson.balance, 0.00
   # end
+
+  test "lesson with equal payment sets balance of lesson to zero when lesson is entered first" do
+    student = students(:equal)
+    lesson = student.lessons.first
+    lesson.set_balance
+    lesson.save
+    assert_equal lesson.balance, 15
+    payment = student.payments.first
+    
+    # payment.set_balance
+    
+    payment_balance = payment.amount
+    for lesson in payment.student.lessons_with_balance_due
+      lesson_balance = lesson.balance
+      if payment_balance >= lesson_balance
+        payment_balance -= lesson_balance
+        lesson_balance = 0
+      else
+        lesson_balance -= payment_balance
+        payment_balance = 0
+      end
+      # assert lesson.valid?
+      lesson.update_attributes(:balance => lesson_balance)
+    end   
+    payment.update_attributes(:balance => payment_balance)
+    
+    
+    payment.save
+    assert_equal payment.balance, 0
+    assert_equal lesson.balance, 0
+  end
 end
